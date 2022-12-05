@@ -6,6 +6,11 @@ interface Token {
   token_type: "bearer";
 }
 
+interface Categories {
+  data: Category[];
+  pagination: unknown;
+}
+
 interface Category {
   box_art_url: string;
   id: string;
@@ -59,7 +64,7 @@ export async function getCategoryId(category: string, token: string) {
       },
     }
   );
-  const data: Category = res.data;
+  const data: Categories = res.data;
 
   return data;
 }
