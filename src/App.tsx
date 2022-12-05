@@ -1,8 +1,11 @@
+import useCategoryId from "./hooks/useCategoryId";
 import useVideos from "./hooks/useVideos";
 
 function App() {
-  const videos = useVideos();
+  const categories = useCategoryId("call of duty");
+  // const videos = useVideos();
 
+  console.log(categories);
   return (
     <div className="App">
       Twitch
