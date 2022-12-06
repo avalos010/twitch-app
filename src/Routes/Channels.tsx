@@ -1,5 +1,4 @@
 import { useState } from "react";
-import IframePlayer from "../Components/IframePlayer";
 import SearchInput from "../Components/SearchInput";
 
 function Channels() {
@@ -9,12 +8,11 @@ function Channels() {
     <div>
       <SearchInput
         placeholder="Search for live channel to watch on twitch"
-        updateQuery={(query: string) => setQuery(query)}
+        updateQuery={(receivedQuery) => {
+          setQuery(receivedQuery);
+        }}
+        navigateToQuery={true}
       />
-
-      {!!query ? (
-        <IframePlayer clipUrl={`https://player.twitch.tv/?channel=${query}`} />
-      ) : null}
     </div>
   );
 }
