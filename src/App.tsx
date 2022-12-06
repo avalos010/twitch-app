@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Clips from "./Routes/Clips";
 import Clip from "./Routes/Clip";
 import Nav from "./Components/Nav";
+import Channels from "./Routes/Channels";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Categories />} />
         <Route path="/clips/:id" element={<Clips />} />
         <Route path="/clips/play/:id" element={<Clip />} />
+        <Route path="/channels" element={<Channels />} />
       </Routes>
     </div>
   );

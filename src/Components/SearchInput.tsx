@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function SearchInput({ updateQuery }: SearchInputProps) {
+function SearchInput({ updateQuery, placeholder }: SearchInputProps) {
   const [query, setQuery] = useState("");
 
   return (
@@ -10,8 +10,8 @@ function SearchInput({ updateQuery }: SearchInputProps) {
         onChange={(e) => setQuery(e.target.value)}
         type="text"
         className="form-control"
-        placeholder="Search for video games"
-        aria-label="Search for video games"
+        placeholder={placeholder}
+        aria-label={placeholder}
         aria-describedby="button-addon2"
       />
 
@@ -31,4 +31,5 @@ export default SearchInput;
 
 interface SearchInputProps {
   updateQuery: (query: string) => void;
+  placeholder: string;
 }

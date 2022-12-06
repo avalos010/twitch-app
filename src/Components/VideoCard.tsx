@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function VideoCard({ name, imageUrl, buttonText, id }: CardProps) {
+function VideoCard({ name, imageUrl, buttonText, id }: VideoCardProps) {
   return (
     <div
       className="card d-flex p-3 text-center flex-column justify-content-between align-items-center"
@@ -23,7 +23,7 @@ function VideoCard({ name, imageUrl, buttonText, id }: CardProps) {
 
 export default VideoCard;
 
-interface CardProps {
+interface VideoCardProps {
   name: string;
   imageUrl: string;
   buttonText: string;

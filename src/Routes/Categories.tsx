@@ -12,7 +12,12 @@ function Categories() {
     <Fragment>
       <h2 className="mb-4">Categories</h2>
       {isLoading && !!query ? <Spinner /> : null}
-      {<SearchInput updateQuery={(query: string) => setQuery(query)} />}
+      {
+        <SearchInput
+          placeholder="Search for video games or categories"
+          updateQuery={(query: string) => setQuery(query)}
+        />
+      }
       {query.length === 0 ? (
         <h3>Search for categories or video games...</h3>
       ) : null}
