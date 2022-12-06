@@ -17,10 +17,10 @@ jobs:
           NETLIFY_CMD: npm build
           NETLIFY_DIR: site/dist
           # Creates a status check with link to preview
-        - name: Status check
-          uses: Sibz/github-status-action@v1.1.1
-          with:
-            authToken: ${{ secrets.GITHUB_TOKEN }}
-            context: Netlify preview
-            state: success
-            target_url: https://jade-pastelito-936508.netlify.app/
+      - name: Status check
+        uses: Sibz/github-status-action@v1.1.1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Netlify preview
+          state: success
+          target_url: https://jade-pastelito-936508.netlify.app/
