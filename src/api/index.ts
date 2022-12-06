@@ -39,7 +39,7 @@ export async function getToken() {
   return data;
 }
 
-export async function getVideos(gameId: string, token: string) {
+export async function getClips(gameId: string, token: string) {
   const res = await axios.get(
     `https://api.twitch.tv/helix/clips?game_id=${gameId}`,
     {

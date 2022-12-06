@@ -11,6 +11,7 @@ function VideoCard({ name, imageUrl, buttonText, id }: CardProps) {
         className="img-thumbnail mt-4"
         alt="..."
         width={300}
+        loading={"lazy"}
       />
       <h5>{name}</h5>
       <Link to={`/clips/play/${id}`} className="btn btn-primary ">

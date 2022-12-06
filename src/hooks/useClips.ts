@@ -1,4 +1,4 @@
-import { getVideos } from "../api";
+import { getClips } from "../api";
 import { useQuery } from "@tanstack/react-query";
 import useToken from "./useToken";
 
@@ -11,7 +11,7 @@ export default function useClips(gameId: string) {
     ["videos", token, gameId],
     async () => {
       if (token) {
-        return getVideos(gameId, token);
+        return getClips(gameId, token);
       }
     },
     {
