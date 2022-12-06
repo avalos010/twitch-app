@@ -1,17 +1,17 @@
 import axios from "axios";
 
-interface Token {
+export interface Token {
   access_token: string;
   expires_in: number;
   token_type: "bearer";
 }
 
-interface Categories {
+export interface Categories {
   data: Category[];
   pagination: unknown;
 }
 
-interface Category {
+export interface Category {
   box_art_url: string;
   id: string;
   name: string;
@@ -39,9 +39,9 @@ export async function getToken() {
   return data;
 }
 
-export async function getVideos(token: string) {
+export async function getVideos(gameId: string, token: string) {
   const res = await axios.get(
-    "https://api.twitch.tv/helix/videos?user_id=987654321",
+    `https://api.twitch.tv/helix/clips?game_id=${gameId}`,
     {
       headers: {
         Authorization: `Bearer ${token}`,

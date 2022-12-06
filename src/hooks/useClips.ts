@@ -2,18 +2,23 @@ import { getVideos } from "../api";
 import { useQuery } from "@tanstack/react-query";
 import useToken from "./useToken";
 
-export default function useVideos() {
+export default function useClips(gameId: string) {
   const tokenData = useToken();
   const token = tokenData.data ? tokenData.data.access_token : null;
 
-  console.log(tokenData);
+  console.log(tokenData, gameId);
   return useQuery(
-    ["videos", token],
+    ["videos", token, gameId],
     async () => {
       if (token) {
-        return getVideos(token);
+        return getVideos(gameId, token);
       }
     },
-    { refetchOnMount: false, enabled: !!token }
+    {
+      refetchOnMount: false,
+      enabled: !!token,
+      refetchOnReconnect: false,
+      refetchOnWindowFocus: false,
+    }
   );
 }
