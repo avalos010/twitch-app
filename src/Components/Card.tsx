@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 function Card({ name, imageUrl, buttonText, id }: CardProps) {
   return (
     <div
+      data-testid="card"
       className="card d-flex p-3 text-center flex-column justify-content-between align-items-center"
       style={{ width: "200px" }}
     >
