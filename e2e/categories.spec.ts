@@ -35,4 +35,14 @@ test.describe("Categories", () => {
     await card(page).getByRole("link", { name: "Watch Clips" }).click();
     await expect(videoCard(page)).toBeVisible();
   });
+
+  test("Iframe loads", async ({ page }) => {
+    searchForResults(page);
+    page.waitForNavigation();
+    await card(page).getByRole("link", { name: "Watch Clips" }).click();
+    page.waitForNavigation();
+    videoCard(page).getByRole("link", { name: "Watch Clip" }).click();
+    const iframe = page.locator("iframe");
+    await expect(iframe).toBeVisible();
+  });
 });
