@@ -17,8 +17,22 @@ jobs:
 
       - uses: microsoft/playwright-github-action@v1
 
-      - name: Install dependencies and run tests
-        run: npm install && npx playwright install &&  npm test
+      - name: Install dependencies
+        run: npm install && npx playwright install
+        
+
+      - name: Wait for Netlify
+        uses: probablyup/wait-for-netlify-action@3.2.0
+        id: waitForDeployment
+        with:
+          site_id: 'c3f4d793-1fca-4854-934a-bfde3b597a6b'
+        env:
+            NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+          
+      - name: Run playwright tests
+        run: npm test
+        env:
+          DEPLOY_URL: ${{ steps.waitForDeployment.outputs.url }}
 
       - name: Upload test results
         if: always()
