@@ -41,7 +41,7 @@ const config: PlaywrightTestConfig = {
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
-    baseURL: process.env.PLAYWRIGHT_TEST_BASE_URL || "http://localhost:5173",
+    // baseURL: "http://localhost:5173",
   },
 
   /* Configure projects for major browsers */
@@ -94,7 +94,7 @@ const config: PlaywrightTestConfig = {
   webServer: {
     command: "npm run dev",
     // Point to the url that returns 200 once dev server is ready.
-    // url: "http://localhost:5173/",
+    url: "http://localhost:5173/",
     // Give it 120 seconds. Increase/decrease depending on your dev server speed.
     timeout: 120000,
     reuseExistingServer: !process.env.CI,
