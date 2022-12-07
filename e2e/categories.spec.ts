@@ -3,8 +3,8 @@ test.describe("Categories", () => {
   const input = (page: Page) => page.locator("input[type=text]");
   const card = (page: Page) => page.locator("[data-testid=card]").nth(0);
 
-  test.beforeEach(async ({ page }) => {
-    await page.goto("localhost:5173");
+  test.beforeEach(async ({ page, baseURL }) => {
+    await page.goto(baseURL as string);
   });
 
   test("Input to be visible in categories", async ({ page }) => {
