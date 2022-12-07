@@ -84,12 +84,12 @@ const config: PlaywrightTestConfig = {
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
   // outputDir: 'test-results/',
 
-  /* Run your local dev server before starting the tests */
-  webServer: {
-    command: "npm run dev --port 5173",
-    port: 5173,
-    reuseExistingServer: true,
-  },
+  // /* Run your local dev server before starting the tests */
+  // webServer: {
+  //   command: "npm run dev --port 5173",
+  //   port: 5173,
+  //   reuseExistingServer: true,
+  // },
 };
 
 export default config;
