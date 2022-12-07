@@ -21,12 +21,14 @@ jobs:
         run: npm install && npx playwright install
         
 
-      - name: Waiting for Netlify deploy
-        uses: mskelton/wait-for-netlify-action@v1
-        id: wait-for-netflify
+      - name: Wait Netlify
+        uses: denar90/wait-for-netlify-action@v2.0.2
+        id: waitForNetlify
         with:
-          site_name: jade-pastelito-936508
-      - run: npm test
+          site_id: "c3f4d793-1fca-4854-934a-bfde3b597a6b"
+          
+      - name: Run playwright tests
+        run: npm test
         env:
           DEPLOY_URL: ${{ steps.wait-for-netflify.outputs.url }}
 
