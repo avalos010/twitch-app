@@ -5,6 +5,7 @@ function VideoCard({ name, imageUrl, buttonText, id }: VideoCardProps) {
     <div
       className="card d-flex p-3 text-center flex-column justify-content-between align-items-center"
       style={{ width: "400px" }}
+      data-testid="video-card"
     >
       <img
         src={imageUrl}
