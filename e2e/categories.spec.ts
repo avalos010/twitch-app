@@ -7,7 +7,7 @@ test.describe("Categories", () => {
     await page.goto("http://localhost:5173/");
   });
 
-  test.only("Input to be visible in categories", async ({ page }) => {
+  test("Input to be visible in categories", async ({ page }) => {
     await expect(input(page)).toBeVisible();
   });
   test("input search returns correct results", async ({ page }) => {
