@@ -30,7 +30,7 @@ jobs:
       - name: Run playwright tests
         run: npm test
         env:
-          DEPLOY_URL: ${{ steps.wait-for-netflify.outputs.url }}
+          DEPLOY_URL: ${{ steps.waitForNetflify.outputs.url }}
 
       - name: Upload test results
         if: always()
