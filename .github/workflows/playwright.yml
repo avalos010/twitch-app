@@ -20,13 +20,11 @@ jobs:
         run: npm install
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-        run: npx playwright install --with-deps chromium
       # Run Playwright tests
       - name: Run Playwright tests
         run: npx playwright test
       # Upload the test result artifacts
       - uses: actions/upload-artifact@v2
-        if: always()
         if: failure()
         with:
           name: playwright-report
