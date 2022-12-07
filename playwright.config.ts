@@ -90,6 +90,14 @@ const config: PlaywrightTestConfig = {
   //   port: 5173,
   //   reuseExistingServer: true,
   // },
+  webServer: {
+    command: "npm run dev",
+    // Point to the url that returns 200 once dev server is ready.
+    url: "http://localhost:5173/",
+    // Give it 120 seconds. Increase/decrease depending on your dev server speed.
+    timeout: 120000,
+    reuseExistingServer: !process.env.CI,
+  },
 };
 
 export default config;
