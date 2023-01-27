@@ -50,7 +50,7 @@ function Nav() {
           return (
             <Link
               className={`px-2 rounded-lg text-white ${
-                pathname === link ? "text-black" : ""
+                pathname === link && "text-black"
               }`}
               to={link}
             >
