@@ -10,7 +10,7 @@ function Categories() {
 
   return (
     <Fragment>
-      <h2 className="mb-4">Categories</h2>
+      <h2 className="mb-4 text-xl">Categories</h2>
       {isLoading && !!query ? <Spinner /> : null}
       {
         <SearchInput
@@ -21,7 +21,7 @@ function Categories() {
       {query.length === 0 ? (
         <h3>Search for categories or video games...</h3>
       ) : null}
-      <div className="d-flex flex-row flex-wrap gap-3">
+      <div className="flex flex-row flex-wrap gap-3">
         {data?.data.map((item) => {
           return (
             <Card

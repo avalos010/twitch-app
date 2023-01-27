@@ -10,7 +10,7 @@ function SearchInput({
 
   const navigate = useNavigate();
   return (
-    <div className="input-group mb-3">
+    <div className="flex flex-row gap-2 mb-3">
       <input
         onKeyDown={(e) => {
           if (e.key === "Enter" && navigateToQuery) {
@@ -22,7 +22,7 @@ function SearchInput({
         }}
         onChange={(e) => setQuery(e.target.value)}
         type="text"
-        className="form-control"
+        className="border border-sky-400 rounded-md w-full py-2 pl-2"
         placeholder={placeholder}
         aria-label={placeholder}
         aria-describedby="button-addon2"
@@ -32,7 +32,7 @@ function SearchInput({
           updateQuery(query);
           navigateToQuery ? navigate(`/channels/${query}`) : null;
         }}
-        className="btn btn-outline-primary"
+        className="bg-slate-700 w-20 rounded-sm text-white text-md hover:bg-black"
         type="button"
         id="button-addon2"
       >
