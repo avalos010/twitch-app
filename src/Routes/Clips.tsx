@@ -8,7 +8,7 @@ function Clips() {
   const { data, isLoading } = useClips(id as string);
 
   return (
-    <div className="d-flex flex-row flex-wrap  gap-3">
+    <div className="flex flex-row flex-wrap  gap-3 justify-center">
       {isLoading ? <Spinner /> : null}
       {data &&
         data.data.map((clip: any) => {

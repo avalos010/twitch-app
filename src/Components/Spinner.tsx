@@ -1,10 +1,9 @@
-function Spinner() {
+import BounceLoader from "react-spinners/BounceLoader";
+
+export default function Spinner() {
   return (
-    <div className="d-flex justify-content-center">
-      <div className="spinner-border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
+    <div className="flex items-center justify-center">
+      <BounceLoader size={50} color="gray" />
     </div>
   );
 }
-export default Spinner;
