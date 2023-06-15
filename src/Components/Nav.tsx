@@ -4,7 +4,7 @@ function Nav() {
   const { pathname } = useLocation();
 
   return (
-    <nav className="navbar navbar-expand navbar-light bg-light">
+    <nav className="navbar navbar-expand navbar-dark bg-dark w-100">
       <div className="container-fluid">
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
@@ -14,7 +14,7 @@ function Nav() {
                 className={pathname == "/" ? "nav-link active" : "nav-link"}
                 aria-current="page"
               >
-                Home
+                Categories
               </Link>
             </li>
             <li className="nav-item">

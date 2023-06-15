@@ -6,6 +6,7 @@ function Channels() {
 
   return (
     <div>
+      <h2 className="mb-4">Channels</h2>
       <SearchInput
         placeholder="Search for live channel to watch on twitch"
         updateQuery={(receivedQuery) => {
@@ -13,6 +14,8 @@ function Channels() {
         }}
         navigateToQuery={true}
       />
+
+      {query.length === 0 ? <h3>Search for Channels on twitch</h3> : null}
     </div>
   );
 }
